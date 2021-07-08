@@ -3,11 +3,8 @@ import {{pascalCase name}} from '.'
 
 export default {
   title: '{{pascalCase name}}',
-  component: {{pascalCase name}},
-  args: {
-    title: 'title default',
-    description: 'description default'
-  }
+  component: {{pascalCase name}}
+  // args: {}
 } as Meta
 
 export const Default: Story = (args) => <{{pascalCase name}} {...args} />
