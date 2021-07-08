@@ -10,4 +10,4 @@ export default {
   }
 } as Meta
 
-export const Basic: Story = (args) => <Logo {...args} />
+export const Default: Story = (args) => <Logo {...args} />
