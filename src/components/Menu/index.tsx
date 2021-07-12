@@ -11,7 +11,11 @@ import Logo from 'components/Logo'
 import Button from 'components/Button'
 import * as S from './styles'
 
-const Menu = () => {
+export type MenuProps = {
+  username?: string
+}
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -19,11 +23,9 @@ const Menu = () => {
       <S.IconWrapper onClick={() => setIsOpen(true)}>
         <MenuIcon aria-label="Open Menu" />
       </S.IconWrapper>
-
       <S.LogoWrapper>
         <Logo hideOnMobile />
       </S.LogoWrapper>
-
       <S.MenuGroup>
         <S.IconWrapper>
           <SearchIcon aria-label="Search" />
@@ -37,17 +39,26 @@ const Menu = () => {
         <S.MenuNav>
           <S.MenuLink href="#">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
+
+          {!!username && (
+            <>
+              <S.MenuLink href="#">My Account</S.MenuLink>
+              <S.MenuLink href="#">Wishlist</S.MenuLink>
+            </>
+          )}
         </S.MenuNav>
 
-        <S.RegisterBox>
-          <Button fullWidth size={'large'}>
-            Log in now
-          </Button>
-          <span>or</span>
-          <S.CreateAccount href="#" title="Sign Up">
-            Sign up
-          </S.CreateAccount>
-        </S.RegisterBox>
+        {!username && (
+          <S.RegisterBox>
+            <Button fullWidth size={'large'}>
+              Log in now
+            </Button>
+            <span>or</span>
+            <S.CreateAccount href="#" title="Sign Up">
+              Sign up
+            </S.CreateAccount>
+          </S.RegisterBox>
+        )}
       </S.MenuFull>
     </S.Wrapper>
   )
