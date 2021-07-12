@@ -88,6 +88,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     right: 0;
     height: 100vh;
     overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
 
@@ -101,19 +102,26 @@ export const MenuFull = styled.nav<MenuFullProps>`
       height: 2.4rem;
     }
 
-    ${MenuLink} {
-      color: ${theme.colors.black};
-      font-weight: ${theme.font.bold};
-      font-size: ${theme.font.sizes.xlarge};
-      margin-bottom: ${theme.spacings.small};
-    }
-
     ${MenuNav} {
       display: flex;
       align-items: center;
       justify-content: center;
       flex: 1;
       flex-direction: column;
+    }
+
+    ${MenuLink} {
+      color: ${theme.colors.black};
+      font-weight: ${theme.font.bold};
+      font-size: ${theme.font.sizes.xlarge};
+      margin-bottom: ${theme.spacings.small};
+      transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
+      transition: transform 0.3s ease-in-out;
+    }
+
+    ${RegisterBox} {
+      transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
+      transition: transform 0.3s ease-in-out;
     }
   `}
 `
