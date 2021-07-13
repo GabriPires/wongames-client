@@ -10,6 +10,14 @@ export default {
     img: 'https://picsum.photos/300/140.jpg',
     price: 'R$ 235,00',
     promotionalPrice: 'R$ 200,00'
+  },
+  argTypes: {
+    onFav: { action: 'click' }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 
