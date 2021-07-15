@@ -2,7 +2,7 @@ import {
   FavoriteBorder,
   Favorite,
   AddShoppingCart
-} from 'styled-icons/material-outlined'
+} from '@styled-icons/material-outlined'
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import Button from 'components/Button'
 import * as S from './styles'

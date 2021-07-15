@@ -1,4 +1,4 @@
-import { Apple, Windows, Linux } from 'styled-icons/fa-brands'
+import { Apple, Windows, Linux } from '@styled-icons/fa-brands'
 
 import Heading from 'components/Heading'
 import MediaMatch from 'components/MediaMatch'
@@ -11,6 +11,7 @@ type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
 
 export type GameDetailsProps = {
   developer: string
+  publisher: string
   platforms: Platform[]
   releaseDate: string
   rating: Rating
@@ -22,7 +23,8 @@ const GameDetails = ({
   developer,
   releaseDate,
   rating,
-  genres
+  genres,
+  publisher
 }: GameDetailsProps) => {
   const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
@@ -66,7 +68,7 @@ const GameDetails = ({
 
         <S.Block>
           <S.Label>Publisher</S.Label>
-          <S.Description>2K</S.Description>
+          <S.Description>{publisher}</S.Description>
         </S.Block>
 
         <S.Block>
