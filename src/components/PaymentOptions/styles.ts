@@ -3,7 +3,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import * as ButtonStyles from 'components/Button/styles'
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.white};
   `}
@@ -62,6 +62,7 @@ export const CardItem = styled.label`
   ${({ theme }) => css`
     ${ItemStyles(theme)};
     justify-content: space-between;
+
     &:not(:last-child) {
       margin-bottom: ${theme.spacings.xxsmall};
     }
@@ -71,6 +72,7 @@ export const CardItem = styled.label`
 export const AddCard = styled.div`
   ${({ theme }) => css`
     ${ItemStyles(theme)};
+
     svg {
       margin-left: ${theme.spacings.xxsmall};
       margin-right: ${theme.spacings.xsmall};
