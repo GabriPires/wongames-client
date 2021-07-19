@@ -18,7 +18,7 @@ function createApolloClient() {
   })
 }
 
-export function InitializeApollo(initialState = {}) {
+export function initializeApollo(initialState = {}) {
   // verificar se ja existe uma instacia criada
   const apolloClientGlobal = apolloClient ?? createApolloClient()
 
@@ -35,6 +35,6 @@ export function InitializeApollo(initialState = {}) {
 }
 
 export function useApollo(initialState = {}) {
-  const store = useMemo(() => InitializeApollo(initialState), [initialState])
+  const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }
