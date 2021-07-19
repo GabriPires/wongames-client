@@ -5,6 +5,7 @@ import theme from 'styles/theme'
 import GameCard from '.'
 
 const props = {
+  slug: 'population-zero',
   title: 'Jogo',
   developer: 'Developer',
   img: 'https://picsum.photos/300/140.jpg',
@@ -13,7 +14,7 @@ const props = {
 
 describe('<GameCard />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<GameCard {...props} />)
+    const { container } = renderWithTheme(<GameCard {...props} />)
 
     expect(screen.getByRole('heading', { name: /jogo/i })).toBeInTheDocument()
 
@@ -27,6 +28,13 @@ describe('<GameCard />', () => {
     )
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
+
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/game/${props.slug}`
+    )
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render price in label', () => {
