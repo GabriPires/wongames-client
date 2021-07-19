@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExploreSideBar /> should render the headings 1`] = `
+.c7 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
+  width: 100%;
+}
+
+.c7:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0.2rem solid #2E2F42;
+  border-radius: 0.2rem;
+  -webkit-transition: background border 0.1s ease-in-out;
+  transition: background border 0.1s ease-in-out;
+  position: relative;
+  outline: none;
+}
+
+.c2:before {
+  content: '';
+  width: 0.6rem;
+  height: 0.9rem;
+  border: 0.2rem solid #FAFAFA;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0.1rem;
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c2:focus {
+  box-shadow: 0 0 0.5rem #F231A5;
+}
+
+.c2:checked {
+  border-color: #F231A5;
+  background: #F231A5;
+}
+
+.c2:checked:before {
+  opacity: 1;
+}
+
+.c3 {
+  cursor: pointer;
+  padding-left: 0.8rem;
+  color: #FAFAFA;
+  line-height: 1.8rem;
+}
+
+.c0 {
+  color: #FAFAFA;
+  position: relative;
+  margin-bottom: 3.2rem;
+  font-size: 1.6rem;
+}
+
+.c0::after {
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  content: '';
+  width: 5rem;
+  border-bottom: 0.5rem solid #3CD3C1;
+}
+
+.c0::after {
+  width: 3rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0.2rem solid #F231A5;
+  border-radius: 50%;
+  background: transparent;
+  -webkit-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
+  outline: none;
+  cursor: pointer;
+}
+
+.c5:focus {
+  box-shadow: 0 0 0.5rem #F231A5;
+}
+
+.c5:before {
+  content: '';
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: #F231A5;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+  opacity: 0;
+  position: absolute;
+}
+
+.c5:checked:before {
+  opacity: 1;
+}
+
+.c6 {
+  padding-left: 0.8rem;
+  color: #FAFAFA;
+  line-height: 1;
+  cursor: pointer;
+}
+
+<main
+  class=""
+>
+  <h2
+    class="c0"
+    color="white"
+  >
+    Price
+  </h2>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      id="under-50"
+      name="under-50"
+      type="checkbox"
+      value=""
+    />
+    <label
+      class="c3"
+      for="under-50"
+    >
+      Under $50
+    </label>
+  </div>
+  <h2
+    class="c0"
+    color="white"
+  >
+    Sort by
+  </h2>
+  <div
+    class="c4"
+  >
+    <input
+      class="c5"
+      id="high-to-low"
+      name="sort-by"
+      type="radio"
+      value="high-to-low"
+    />
+    <label
+      class="c6"
+      for="high-to-low"
+    >
+      High to low
+    </label>
+  </div>
+  <div
+    class="c4"
+  >
+    <input
+      class="c5"
+      id="low=to-high"
+      name="sort-by"
+      type="radio"
+      value="low=to-high"
+    />
+    <label
+      class="c6"
+      for="low=to-high"
+    >
+      Low to high
+    </label>
+  </div>
+  <h2
+    class="c0"
+    color="white"
+  >
+    System
+  </h2>
+  <h2
+    class="c0"
+    color="white"
+  >
+    Genre
+  </h2>
+  <button
+    class="c7"
+  >
+    <span>
+      Filter
+    </span>
+  </button>
+</main>
+`
