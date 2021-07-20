@@ -1,9 +1,10 @@
 import { screen } from '@testing-library/react'
+import { MockedProvider } from '@apollo/client/testing'
 import { renderWithTheme } from 'utils/tests/helpers'
-import gamesMock from 'components/GameCardSlider/mock'
 import filterItemsMock from 'components/ExploreSideBar/mock'
 
 import Games from '.'
+import { QUERY_GAMES } from 'graphql/queries/games'
 
 jest.mock('templates/Base', () => ({
   __esModule: true,
@@ -19,24 +20,67 @@ jest.mock('components/ExploreSideBar', () => ({
   }
 }))
 
-jest.mock('components/GameCard', () => ({
-  __esModule: true,
-  default: function Mock() {
-    return <div data-testid="Mock GameCard" />
-  }
-}))
-
 describe('<Games />', () => {
-  it('should render sections', () => {
+  it('should render loading when starting the template', () => {
     renderWithTheme(
-      <Games filterItems={filterItemsMock} games={[gamesMock[0]]} />
+      <MockedProvider mocks={[]} addTypename={false}>
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>
     )
 
-    expect(screen.getByTestId('Mock ExploreSideBar')).toBeInTheDocument()
-    expect(screen.getByTestId('Mock GameCard')).toBeInTheDocument()
+    expect(screen.getByText(/loading/i)).toBeInTheDocument()
+  })
+
+  it('should render sections', async () => {
+    renderWithTheme(
+      <MockedProvider
+        mocks={[
+          {
+            request: {
+              query: QUERY_GAMES,
+              variables: { limit: 15 }
+            },
+            result: {
+              data: {
+                games: [
+                  {
+                    name: 'METAL GEAR SOLID 2 SUBSTANCE',
+                    slug: 'metal-gear-solid-2-substance',
+                    cover: {
+                      url: '/uploads/metal_gear_solid_2_substance_329a02cf2b.jpg'
+                    },
+                    developers: [
+                      {
+                        name: 'Konami Computer Entertainment Japan, Inc.'
+                      }
+                    ],
+                    price: 49.89,
+                    __typename: 'Game'
+                  }
+                ]
+              }
+            }
+          }
+        ]}
+        addTypename={false}
+      >
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>
+    )
+
+    // it starts without data
+    expect(screen.getByText(/loading/i)).toBeInTheDocument()
+
+    // we wait until we have data to get the elements
+    // get -> tem certeza do elemento
+    // query -> nao tem o elemento
+    // find -> processos assincronos
+    expect(await screen.findByTestId('Mock ExploreSideBar')).toBeInTheDocument()
+
+    expect(await screen.findByText(/metal gear solid/i)).toBeInTheDocument()
 
     expect(
-      screen.getByRole('button', { name: /show more/i })
+      await screen.findByRole('button', { name: /show more/i })
     ).toBeInTheDocument()
   })
 })
