@@ -5,7 +5,7 @@ import cardsMock from 'components/PaymentOptions/mock'
 import { initializeApollo } from 'utils/apollo'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
-import { gamesMapper, highlightMapper } from 'utils/mappers'
+import { gamesMapper, highlightMapper } from 'utils/mappers/index'
 
 export default function CartPage(props: CartProps) {
   return <Cart {...props} />

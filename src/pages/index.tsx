@@ -3,7 +3,7 @@ import Home, { HomeTemplateProps } from 'templates/Home'
 import { initializeApollo } from 'utils/apollo'
 import { QueryHome, QueryHomeVariables } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
-import { bannerMapper, gamesMapper, highlightMapper } from 'utils/mappers'
+import { bannerMapper, gamesMapper, highlightMapper } from 'utils/mappers/index'
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />

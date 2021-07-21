@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Game, { GameTemplateProps } from 'templates/Game'
 
 import { initializeApollo } from 'utils/apollo'
-import { gamesMapper, highlightMapper } from 'utils/mappers'
+import { gamesMapper, highlightMapper } from 'utils/mappers/index'
 
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import {

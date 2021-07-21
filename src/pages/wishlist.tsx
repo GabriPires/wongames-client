@@ -4,7 +4,7 @@ import Wishlist, { WishlistTemplateProps } from 'templates/Wishlist'
 import gamesMock from 'components/GameCardSlider/mock'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
-import { gamesMapper, highlightMapper } from 'utils/mappers'
+import { gamesMapper, highlightMapper } from 'utils/mappers/index'
 
 export default function WishlistPage(props: WishlistTemplateProps) {
   return <Wishlist {...props} />
