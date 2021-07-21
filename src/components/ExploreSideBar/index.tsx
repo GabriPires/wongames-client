@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ParsedUrlQueryInput } from 'querystring'
 import { Close } from '@styled-icons/material-outlined/Close'
 import { FilterList } from '@styled-icons/material-outlined/FilterList'
 import xor from 'lodash.xor'
@@ -9,7 +10,6 @@ import Checkbox from 'components/Checkbox'
 import Radio from 'components/Radio'
 
 import * as S from './styles'
-import { ParsedUrlQueryInput } from 'querystring'
 
 export type ItemProps = {
   title: string
