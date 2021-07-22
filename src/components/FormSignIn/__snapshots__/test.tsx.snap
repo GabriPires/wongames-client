@@ -7,6 +7,37 @@ exports[`<FormSignIn /> should render the form 1`] = `
   overflow: hidden;
 }
 
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+  width: 100%;
+}
+
+.c8:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -57,50 +88,6 @@ exports[`<FormSignIn /> should render the form 1`] = `
   width: 100%;
 }
 
-.c8 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
-  color: #FAFAFA;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.4rem;
-  padding: 0.8rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  height: 5rem;
-  font-size: 1.6rem;
-  padding: 0.8rem 4.8rem;
-  width: 100%;
-}
-
-.c8:hover {
-  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
-}
-
-.c6 {
-  display: block;
-  font-size: 1.4rem;
-  color: #030517;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  text-align: right;
-}
-
-.c6:hover {
-  color: #0f1971;
-}
-
 .c0 .c1 {
   margin: 0.8rem 0;
 }
@@ -129,12 +116,23 @@ exports[`<FormSignIn /> should render the form 1`] = `
   border-bottom: 0.1rem solid #29b3a3;
 }
 
+.c6 {
+  display: block;
+  font-size: 1.4rem;
+  color: #030517;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: right;
+}
+
+.c6:hover {
+  color: #0f1971;
+}
+
 <div
   class="c0"
 >
-  <form
-    action="#"
-  >
+  <form>
     <div
       class="c1 "
     >
@@ -220,6 +218,7 @@ exports[`<FormSignIn /> should render the form 1`] = `
     </a>
     <button
       class="c7 c8"
+      type="submit"
     >
       <span>
         Sign in now
