@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import itemsMock from 'components/CartList/mock'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 import cardsMock from 'components/PaymentOptions/mock'
@@ -10,8 +9,6 @@ import Cart from '.'
 import React from 'react'
 
 const props = {
-  items: itemsMock,
-  total: 'R$ 430,00',
   cards: cardsMock,
   recommendedHighlight: highlightMock,
   recommendedGames: gamesMock
@@ -75,11 +72,5 @@ describe('<Cart />', () => {
     expect(screen.queryByTestId('Mock Empty')).not.toBeInTheDocument()
 
     // expect(container.firstChild).toMatchSnapshot()
-  })
-
-  it('should render empty section if there are no items', () => {
-    renderWithTheme(<Cart {...props} items={[]} />)
-
-    expect(screen.getByTestId('Mock Empty')).toBeInTheDocument()
   })
 })
