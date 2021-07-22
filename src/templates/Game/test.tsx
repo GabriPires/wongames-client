@@ -1,3 +1,4 @@
+import React from 'react'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
@@ -66,6 +67,15 @@ jest.mock('components/Showcase', () => {
   }
 })
 
+jest.mock('templates/Base', () => {
+  return {
+    __esModule: true,
+    default: function Mock({ children }: { children: React.ReactNode }) {
+      return <div data-testid="Mock Base">{children}</div>
+    }
+  }
+})
+
 describe('<Game />', () => {
   it('should render the template with components', () => {
     renderWithTheme(<Game {...props} />)
@@ -73,6 +83,7 @@ describe('<Game />', () => {
     expect(screen.getByTestId('Mock Gallery')).toBeInTheDocument()
     expect(screen.getByTestId('Mock GameDetails')).toBeInTheDocument()
     expect(screen.getByTestId('Mock GameInfo')).toBeInTheDocument()
+    expect(screen.getByTestId('Mock Base')).toBeInTheDocument()
     expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(2)
     expect(screen.getByText(/custom html/i)).toBeInTheDocument()
   })
