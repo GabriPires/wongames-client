@@ -28,7 +28,7 @@ describe('validations', () => {
         email: expect.any(String),
         username: expect.any(String),
         password: expect.any(String),
-        confirmPassword: expect.any(String)
+        confirm_password: expect.any(String)
       })
     })
 
@@ -57,10 +57,10 @@ describe('validations', () => {
         username: 'gabriel',
         email: 'gabriel@won.com',
         password: '1234',
-        confirmPassword: '4321'
+        confirm_password: '4321'
       }
 
-      expect(signUpValidate(values).confirmPassword).toMatchInlineSnapshot(
+      expect(signUpValidate(values).confirm_password).toMatchInlineSnapshot(
         `"confirm password does not match with password"`
       )
     })
