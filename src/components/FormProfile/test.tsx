@@ -15,12 +15,6 @@ describe('<FormProfile />', () => {
 
     expect(screen.getByRole('textbox', { name: /email/i })).toBeInTheDocument()
 
-    expect(
-      screen.getByPlaceholderText(/type your password/i)
-    ).toBeInTheDocument()
-
-    expect(screen.getByPlaceholderText(/new password/i)).toBeInTheDocument()
-
     expect(screen.getByRole('button', { name: /save/i })).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
