@@ -3,10 +3,10 @@ import { useCart } from 'hooks/use-cart'
 
 import * as S from './styles'
 
-export type PaymentoInfoProps = {
+export type PaymentInfoProps = {
   number: string
-  flag: string
-  img: string
+  flag?: string | null
+  img?: string | null
   purchaseDate: string
 }
 
@@ -16,7 +16,7 @@ export type GameItemProps = {
   title: string
   price: string
   downloadLink?: string
-  paymentInfo?: PaymentoInfoProps
+  paymentInfo?: PaymentInfoProps
 }
 
 const GameItem = ({
@@ -62,7 +62,9 @@ const GameItem = ({
           <div>{paymentInfo.purchaseDate}</div>
           <S.CardInfo>
             <span>{paymentInfo.number}</span>
-            <img src={paymentInfo.img} alt={paymentInfo.flag} />
+            {!!paymentInfo.img && !!paymentInfo.flag && (
+              <img src={paymentInfo.img} alt={paymentInfo.flag} />
+            )}
           </S.CardInfo>
         </S.PaymentContent>
       )}
