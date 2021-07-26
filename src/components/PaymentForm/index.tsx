@@ -4,13 +4,23 @@ import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined'
 
 import Button from 'components/Button'
 import Heading from 'components/Heading'
-import { useState } from 'react'
+import { useCart } from 'hooks/use-cart'
+import { useEffect, useState } from 'react'
 
 import * as S from './styles'
 
 const PaymentForm = () => {
+  const { items } = useCart()
   const [error, setError] = useState<string | null>(null)
   const [disabled, setDisabled] = useState(true)
+  // const [clientSecret, setClientSecret] = useState('')
+  // const [freeGames, setFreeGames] = useState(false)
+
+  useEffect(() => {
+    if (items.length) {
+      return
+    }
+  }, [items])
 
   const handleChange = async (event: StripeCardElementChangeEvent) => {
     setDisabled(event.empty)
