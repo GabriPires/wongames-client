@@ -48,7 +48,7 @@ export const createPayment = ({
   token
 }: CreatePaymentParams) => {
   return fetcher({
-    url: 'orders',
+    url: '/orders',
     body: JSON.stringify({
       cart: items,
       paymentIntentId: paymentIntent?.id,
