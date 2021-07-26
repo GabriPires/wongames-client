@@ -10,7 +10,7 @@ export const createPaymentIntent = async ({
   token
 }: PaymentIntentParams) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_APU_URL}/orders/create-payment-intent`,
+    `${process.env.NEXT_PUBLIC_API_URL}/orders/create-payment-intent`,
     {
       method: 'POST',
       headers: {
