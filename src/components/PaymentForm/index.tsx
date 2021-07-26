@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Session } from 'next-auth'
 import { useRouter } from 'next/router'
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
@@ -129,9 +130,11 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
           )}
         </S.Body>
         <S.Footer>
-          <Button as="a" fullWidth minimal>
-            Continue shopping
-          </Button>
+          <Link href="/" passHref>
+            <Button as="a" fullWidth minimal>
+              Continue shopping
+            </Button>
+          </Link>
           <Button
             fullWidth
             icon={loading ? <FormLoading /> : <ShoppingCart />}
