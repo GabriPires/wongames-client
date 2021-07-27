@@ -1,4 +1,5 @@
 {
   "projectId": "t9wste",
-  "video": false
+  "video": false,
+  "integrationFolder": "cypress/e2e"
 }
