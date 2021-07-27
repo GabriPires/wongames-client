@@ -7,9 +7,9 @@ describe('Home Page', () => {
 
     // selecionou os banners
     cy.shouldRenderBanner()
-    cy.shouldRenderShowcase({ name: 'New Games' })
-    cy.shouldRenderShowcase({ name: 'Most Popular Games' })
-    cy.shouldRenderShowcase({ name: 'Upcoming' })
-    cy.shouldRenderShowcase({ name: 'Free games' })
+    cy.shouldRenderShowcase({ name: 'New Games', highlight: false })
+    cy.shouldRenderShowcase({ name: 'Most Popular Games', highlight: true })
+    cy.shouldRenderShowcase({ name: 'Upcoming', highlight: true })
+    cy.shouldRenderShowcase({ name: 'Free games', highlight: true })
   })
 })
