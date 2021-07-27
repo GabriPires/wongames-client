@@ -13,6 +13,7 @@
     "test:watch": "yarn test --watch",
     "test:ci": "jest --runInBand",
     "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
